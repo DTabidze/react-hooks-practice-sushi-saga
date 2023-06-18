@@ -13,6 +13,7 @@ body {
     ". . . . ."
     ". bt bt bt ."
     ". . rm . ."
+    ". . fm . ."
     ". tb tb tb .";
 }
 
@@ -78,4 +79,8 @@ body {
   height: 428px;
   width: 700px;
   margin: auto;
+}
+
+.budgetform {
+  grid-area: fm;
 }

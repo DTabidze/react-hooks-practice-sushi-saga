@@ -1,16 +1,21 @@
 import React from "react";
 
-function Table({ plates = [] }) {
+function Table({ plates = [] , budget, inputMoney, handleInputMoney, handleBudgetInc}) {
   // renders an empty plate for every element in the array
   const emptyPlates = plates.map((_, index) => (
-    <div key={index} className="empty-plate" style={{ top: -7 * index }} />
+    <div key={index} className="empty-plate" style={{ top: -7 * index }} /> 
   ));
 
   return (
     <>
       <h1 className="remaining">
-        You have: ${/* Give me how much money I have left */} remaining!
+        You have: ${budget} remaining!
       </h1>
+      <form className="budgetform" onSubmit={(e) => handleBudgetInc(e)}>
+        <label type="text" name="money"> Increase Budget: </label>
+        <input type="text" value={inputMoney} onChange={(e) => handleInputMoney(e)}></input>
+        <input type="submit" name="budget" ></input>
+      </form>
       <div className="table">
         <div className="stack">{emptyPlates}</div>
       </div>
